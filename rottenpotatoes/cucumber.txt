@@ -1,0 +1,15 @@
+Using the default profile...
+Feature: User can add new movie
+
+  Scenario: Add new movie                            # features/add_movie.feature:3
+    Given I am on the RottenPotatoes home page       # features/step_definitions/web_steps.rb:44
+    When I follow "Add new movie"                    # features/step_definitions/web_steps.rb:56
+    Then I should be on the Create New Movie page    # features/step_definitions/web_steps.rb:230
+    When I fill in "Title" with "New Movie Test"     # features/step_definitions/web_steps.rb:60
+    And I select "PG" from "Rating"                  # features/step_definitions/web_steps.rb:85
+    And I press "Save Changes"                       # features/step_definitions/web_steps.rb:52
+    Then I should be on the RottenPotatoes home page # features/step_definitions/web_steps.rb:230
+    And I should see "New Movie Test"                # features/step_definitions/web_steps.rb:105
+    And I should see "PG"                            # features/step_definitions/web_steps.rb:105
+
+Coverage report generated for Cucumber Features, RSpec to /home/ubuntu/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 49 / 55 LOC (89.09%) covered.

@@ -252,3 +252,9 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Given (/^the following movies exist:$/) do |movies_table|
+  movies_table.hashes.each do |movie|
+    Movie.create(movie)
+  end
+end
